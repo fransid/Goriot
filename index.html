@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Père Goriot — L'incipit réaliste | Exercice de Sid KHALIFA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bordeaux:#8e1b2e; --bordeaux-clair:#b8324a; --creme:#fbf6ea; --papier:#fffdf7;
+  --encre:#2b2420; --or:#d9a441; --bleu:#1f4e79; --bleu-clair:#e6eff8;
+  --vert:#1e8a47; --vert-fond:#e3f5e9; --rouge:#c62828; --rouge-fond:#fdeaea;
+  --gris:#6b625b; --bord:#e5dccb;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--creme);color:var(--encre);font-family:"Andika",Verdana,sans-serif;font-size:18px;line-height:1.6}
+.page{max-width:900px;margin:0 auto;padding:24px 18px 60px}
+header.bandeau{background:var(--papier);border-top:10px solid var(--bordeaux);border-radius:0 0 16px 16px;box-shadow:0 4px 14px rgba(0,0,0,.08);padding:20px 24px;display:flex;gap:22px;align-items:center}
+header.bandeau img{width:auto;height:auto;max-width:180px;flex:none}
+.chapitre{display:inline-block;background:var(--or);color:#3a2a05;font-weight:700;font-size:.8rem;letter-spacing:.12em;padding:3px 12px;border-radius:20px;text-transform:uppercase}
+h1{font-family:"Merriweather",Georgia,serif;color:var(--bordeaux);font-size:2rem;margin:.3em 0 .1em;line-height:1.25}
+.sous-titre{font-style:italic;color:var(--gris);margin:0}
+.auteur-ex{margin-top:8px;font-weight:700;color:var(--bleu)}
+.fiche{margin-top:22px;background:var(--bleu-clair);border-left:6px solid var(--bleu);border-radius:10px;padding:14px 20px}
+.fiche dl{display:grid;grid-template-columns:130px 1fr;gap:4px 12px;margin:0}
+.fiche dt{font-weight:700;color:var(--bleu);font-size:.85rem;letter-spacing:.06em;padding-top:2px}
+.fiche dd{margin:0}
+h2{font-family:"Merriweather",Georgia,serif;color:#fff;background:var(--bordeaux);display:inline-block;padding:6px 18px;border-radius:8px 24px 8px 8px;font-size:1.25rem;margin:34px 0 14px}
+h3{color:var(--bordeaux);border-bottom:3px solid var(--or);display:inline-block;margin:28px 0 8px;font-size:1.15rem}
+.texte{background:var(--papier);border:1px solid var(--bord);border-radius:12px;padding:22px 28px;font-family:"Merriweather",Georgia,serif;font-size:1.02rem;line-height:1.9;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.texte p{text-indent:1.5em;margin:0 0 1em;text-align:justify}
+.texte blockquote{margin:0 0 1em 2em;font-style:italic;color:var(--bordeaux)}
+.texte .source{text-align:right;font-size:.85rem;color:var(--gris);text-indent:0}
+.q{background:var(--papier);border:2px solid var(--bord);border-radius:12px;padding:16px 20px;margin:14px 0;transition:border-color .2s,background .2s}
+.q.juste{border-color:var(--vert);background:var(--vert-fond)}
+.q.faux{border-color:var(--rouge);background:var(--rouge-fond)}
+.q .num{display:inline-flex;width:32px;height:32px;border-radius:50%;background:var(--bordeaux);color:#fff;font-weight:700;align-items:center;justify-content:center;margin-right:8px}
+.q .enonce{font-weight:700}
+.q .consigne{font-size:.85rem;color:var(--gris);font-style:italic;margin:4px 0 8px}
+.opts{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.opts label{display:flex;gap:10px;align-items:flex-start;padding:9px 14px;border:2px solid var(--bord);border-radius:10px;background:#fff;cursor:pointer;transition:.15s}
+.opts label:hover{border-color:var(--bleu)}
+.opts input{margin-top:6px;accent-color:var(--bleu);transform:scale(1.2)}
+.opts label.ok{border-color:var(--vert);background:var(--vert-fond);color:var(--vert);font-weight:700}
+.opts label.ko{border-color:var(--rouge);background:var(--rouge-fond);color:var(--rouge);font-weight:700}
+.retour{margin-top:10px;font-weight:700}
+.retour.ok{color:var(--vert)} .retour.ko{color:var(--rouge)}
+textarea{width:100%;min-height:120px;font-family:inherit;font-size:1rem;padding:10px;border:2px solid var(--bord);border-radius:10px;margin-top:10px}
+.score{position:sticky;top:0;z-index:5;background:var(--bleu);color:#fff;padding:10px 18px;border-radius:0 0 12px 12px;display:flex;justify-content:space-between;align-items:center;font-weight:700;box-shadow:0 3px 10px rgba(0,0,0,.15)}
+.barre{flex:1;height:10px;background:rgba(255,255,255,.3);border-radius:10px;margin:0 16px;overflow:hidden}
+.barre span{display:block;height:100%;width:0;background:var(--or);transition:width .3s}
+.actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:40px 0 10px}
+button{font-family:inherit;font-size:1.05rem;font-weight:700;border:none;border-radius:30px;padding:13px 26px;cursor:pointer;box-shadow:0 3px 0 rgba(0,0,0,.2);transition:transform .1s}
+button:active{transform:translateY(2px)}
+.btn-corrige{background:var(--bordeaux);color:#fff}
+.btn-dl{background:var(--bleu);color:#fff}
+.btn-reset{background:#fff;color:var(--bordeaux);border:2px solid var(--bordeaux)}
+#corrige{display:none;background:var(--papier);border:3px dashed var(--vert);border-radius:14px;padding:10px 24px 20px;margin-top:20px}
+#corrige.visible{display:block}
+#corrige h2{background:var(--vert)}
+#corrige .item{margin:14px 0;padding-left:12px;border-left:4px solid var(--or)}
+#corrige .item b{color:var(--bordeaux)}
+footer{text-align:center;color:var(--gris);font-size:.85rem;margin-top:40px}
+@media(max-width:600px){header.bandeau{flex-direction:column;text-align:center}.fiche dl{grid-template-columns:1fr}h1{font-size:1.5rem}}
+@media print{.score,.actions{display:none}#corrige{display:block}}
+</style>
+</head>
+<body>
+<div class="score"><span>Mon score</span><div class="barre"><span id="barre"></span></div><span id="score">0 / 14</span></div>
+<div class="page">
+<header class="bandeau">
+  <img src="data:image/jpeg;base64,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" alt="Logo de Sid KHALIFA">
+  <div>
+    <span class="chapitre">Fiche de lecture · Réalisme · 4<sup>e</sup></span>
+    <h1>Le Père Goriot — l'incipit</h1>
+    <p class="sous-titre">Relever les caractères du réalisme dans la description de la Maison Vauquer</p>
+    <p class="auteur-ex">✍️ Un exercice de Sid KHALIFA</p>
+  </div>
+</header>
+
+<section class="fiche"><dl>
+  <dt>AUTEUR</dt><dd>Honoré de Balzac (1799-1850)</dd>
+  <dt>ŒUVRE</dt><dd><i>Le Père Goriot</i>, 1834-1835 (« Scènes de la vie privée », <i>La Comédie humaine</i>)</dd>
+  <dt>GENRE</dt><dd>Roman — incipit descriptif (« Une pension bourgeoise »)</dd>
+  <dt>MOUVEMENT</dt><dd>Réalisme (Balzac en est le précurseur)</dd>
+</dl></section>
+
+<h2>📖 Le texte</h2>
+<article class="texte">
+<p>La façade de la pension donne sur un jardinet, en sorte que la maison tombe à angle droit sur la rue Neuve-Sainte-Geneviève, où vous la voyez coupée dans sa profondeur. Le long de cette façade, entre la maison et le jardinet, règne un cailloutis en cuvette, large d'une toise, devant lequel est une allée sablée, bordée de géraniums, de lauriers-roses et de grenadiers plantés dans de grands vases en faïence bleue et blanche. On entre dans cette allée par une porte bâtarde surmontée d'un écriteau sur lequel on lit : <b>MAISON VAUQUER</b> et en dessous : <i>Pension bourgeoise des deux sexes et autres</i>.</p>
+<p>Pendant le jour, une porte à claire-voie, armée d'une sonnette criarde, laisse apercevoir au bout du petit pavé, sur le mur opposé à la rue, une arcade peinte en marbre vert par un artiste du quartier. Sous le renforcement que simule cette peinture s'élève une statue représentant l'Amour. À voir le vernis écaillé qui le couvre, les amateurs de symboles y découvriraient peut-être un mythe de l'amour parisien qu'on guérit à quelques pas de là. Sous le socle, cette inscription à demi effacée rappelle le temps auquel remonte cet ornement par l'enthousiasme dont il témoigne pour Voltaire, rentré dans Paris en 1777 :</p>
+<blockquote>« Qui que tu sois, voici ton maître :<br>Il l'est, le fut, ou le doit être. »</blockquote>
+<p>À la nuit tombante, la porte à claire-voie est remplacée par une porte pleine. Le jardinet, aussi large que la façade est longue, se trouve encaissé par le mur de la rue et par le mur mitoyen de la maison voisine, le long de laquelle pend un manteau de lierre qui la cache entièrement et attire les yeux des passants par un effet pittoresque dans Paris. Chacun de ces murs est tapissé d'espalier et de vigne dont les fructifications grêles et poudreuses sont l'objet des craintes annuelles de madame Vauquer et de ses conversations avec les pensionnaires.</p>
+<p>Le long de chaque muraille règne une étroite allée qui mène à un couvert de tilleuls, mot que madame Vauquer, quoique née de Conflans, prononce obstinément <i>tieuilles</i>, malgré les observations grammaticales de ses hôtes. Entre les deux allées latérales est un carré d'artichauts flanqué d'arbres fruitiers en quenouille, et bordé d'oseille, de laitue ou de persil. Sous le couvert de tilleuls est plantée une table ronde peinte en vert, et entourée de sièges. Là, durant les jours caniculaires, les convives assez riches pour se permettre de prendre du café viennent le savourer par une chaleur capable de faire éclore des œufs.</p>
+<p>La façade, élevée de trois étages et surmontée de mansardes, est bâtie en moellons et badigeonnée avec cette couleur jaune qui donne un caractère ignoble à presque toutes les maisons de Paris. Les cinq croisées percées à chaque étage ont de petits carreaux et sont garnies de jalousies dont aucune n'est relevée de la même manière, en sorte que toutes leurs lignes jurent entre elles. La profondeur de cette maison comporte deux croisées qui, au rez-de-chaussée, ont pour ornement des barreaux en fer grillagés.</p>
+<p>Derrière le bâtiment est une cour large d'environ vingt pieds, où vivent en bonne intelligence des cochons, des poules, des lapins, et au fond de laquelle s'élève un hangar à serrer le bois. Entre ce hangar et la fenêtre de la cuisine se suspend le garde-manger au-dessous duquel tombent les eaux grasses de l'évier. Cette cour a sur la rue Neuve-Sainte-Geneviève une porte étroite par où la cuisinière chasse les ordures de la maison en nettoyant cette sentine à grand renfort d'eau, sous peine de pestilence.</p>
+<p class="source">Honoré de Balzac, <i>Le Père Goriot</i> (1835), incipit — éd. Calmann-Lévy (1910), Wikisource.</p>
+</article>
+
+<div id="questions"></div>
+
+<div class="actions">
+  <button class="btn-corrige" onclick="afficherCorrige()">📘 Corrigé avec explications</button>
+  <button class="btn-dl" onclick="telecharger()">⬇️ Télécharger</button>
+  <button class="btn-reset" onclick="recommencer()">↺ Recommencer</button>
+</div>
+<section id="corrige"></section>
+<footer>Exercice conçu par <b>Sid KHALIFA</b> — d'après la fiche « Le Père Goriot, le réalisme ».</footer>
+</div>
+
+<script type="application/json" id="reponses">{}</script>
+<script>
+// type: "un" = une seule réponse, "plusieurs" = cases à cocher, "libre" = rédaction (non notée)
+const PARTIES = [
+ {titre:"Situer le texte", qs:[
+  {n:1,e:"Qui est l'auteur de ce texte, de quelle œuvre est-il extrait et à quel mouvement est-il rattaché ?",type:"un",
+   o:["Victor Hugo, Les Misérables, romantisme","Honoré de Balzac, Le Père Goriot, réalisme","Émile Zola, L'Assommoir, naturalisme"],r:[1],
+   c:"Honoré de Balzac, <i>Le Père Goriot</i> (1835). Balzac est considéré comme le précurseur du réalisme (son projet global est <i>La Comédie humaine</i>)."},
+  {n:2,e:"Qui est madame Vauquer ?",type:"un",
+   o:["Une riche aristocrate qui reçoit des invités","La logeuse qui tient la pension bourgeoise","La cuisinière de la maison"],r:[1],
+   c:"La veuve Vauquer, née de Conflans, tient depuis quarante ans une pension bourgeoise rue Neuve-Sainte-Geneviève ; c'est la logeuse autour de qui gravitent les pensionnaires."},
+  {n:3,e:"À quel moment de l'œuvre se situe ce passage, et quel rôle joue-t-il ?",type:"un",
+   o:["C'est l'incipit : il plante le décor du drame","C'est le dénouement : il conclut l'histoire","C'est une lettre écrite par un personnage"],r:[0],
+   c:"C'est l'incipit : la description de la pension Vauquer ouvre le roman et plante le décor du drame ; Balzac lui-même parle d'un « cadre de bronze »."}
+ ]},
+ {titre:"Comprendre la description", qs:[
+  {n:4,e:"Cochez les termes appartenant au champ lexical de la saleté ou de la laideur.",type:"plusieurs",
+   o:["« sentine »","« géraniums »","« pestilence »","« eaux grasses »","« lauriers-roses »","« caractère ignoble »"],r:[0,2,3,5],
+   c:"« sentine », « pestilence », « eaux grasses », « caractère ignoble », « jurent entre elles » : le lecteur ressent un malaise, un dégoût ; la laideur n'est pas masquée, elle est montrée avec insistance."},
+  {n:5,e:"Quels éléments montrent que la pension est un établissement modeste, presque misérable ?",type:"plusieurs",
+   o:["Le badigeon jaune « ignoble »","Les vignes aux « fructifications grêles et poudreuses »","Les vases en faïence bleue et blanche","Les barreaux de fer aux fenêtres du rez-de-chaussée","Le carré d'artichauts et l'oseille"],r:[0,1,3,4],
+   c:"Le badigeon jaune « ignoble », les vignes aux « fructifications grêles et poudreuses », le carré d'artichauts et l'oseille (nourriture pauvre), les barreaux de fer aux fenêtres du rez-de-chaussée, qui « sentent la prison »."},
+  {n:6,e:"« les convives assez riches pour se permettre de prendre du café » : que révèle cette précision ?",type:"un",
+   o:["Que tous les pensionnaires sont très riches","Que le café y est un luxe : les pensionnaires sont pauvres et l'argent crée des hiérarchies","Que madame Vauquer offre le café à tout le monde"],r:[1],
+   c:"Le café y est un luxe : les pensionnaires sont pauvres, l'argent est la mesure de tout, et de petites différences de fortune créent des hiérarchies sociales."},
+  {n:7,e:"Pourquoi le narrateur précise-t-il que madame Vauquer prononce « tieuilles » ?",type:"un",
+   o:["Pour montrer qu'elle vient d'un pays étranger","Pour faire rire sans raison particulière","Sa prononciation fautive trahit son milieu et son manque d'éducation"],r:[2],
+   c:"Notation sociolinguistique typique du réalisme : sa prononciation fautive trahit son milieu et son absence d'éducation, malgré son orgueil d'être « née de Conflans »."},
+  {n:8,e:"Que symbolise la statue de l'Amour au « vernis écaillé » ?",type:"un",
+   o:["Un amour vénal, dégradé","Un amour pur et éternel","L'amour de madame Vauquer pour Voltaire"],r:[0],
+   c:"L'Amour écaillé symbolise l'amour vénal, dégradé, « qu'on guérit à quelques pas de là » — allusion à la proximité des prostituées ; le détail concret porte un sens."}
+ ]},
+ {titre:"Analyser le réalisme", qs:[
+  {n:9,e:"Cochez les indications de mesure ou de localisation précises présentes dans le texte.",type:"plusieurs",
+   o:["« large d'une toise »","« d'environ vingt pieds »","« au bord de la mer »","« rue Neuve-Sainte-Geneviève »","« trois étages »"],r:[0,1,3,4],
+   c:"« large d'une toise », « d'environ vingt pieds », « trois étages », « rue Neuve-Sainte-Geneviève », « Voltaire rentré dans Paris en 1777 » : effet de procès-verbal, de véracité documentaire."},
+  {n:10,e:"Quel est le lien entre ce lieu et les habitants de la pension ?",type:"un",
+   o:["Aucun lien : le décor est purement décoratif","Le milieu est le reflet des habitants et détermine leur destin","Le lieu est plus luxueux que ses habitants"],r:[1],
+   c:"Le milieu est le reflet des habitants : la pension mal entretenue est comme ses résidents — Goriot ruiné, Rastignac pauvre, Vautrin proscrit ; le lieu détermine les destinées."},
+  {n:11,e:"Lesquelles de ces citations relèvent du réalisme ?",type:"plusieurs",
+   o:["« couleur jaune qui donne un caractère ignoble »","« un manteau de lierre »","« les eaux grasses de l'évier »","« un effet pittoresque dans Paris »"],r:[0,1,2,3],
+   c:"Toutes sont réalistes, y compris « un effet pittoresque dans Paris » et le lierre : le réalisme n'exclut pas l'esthétique, il peint le réel tel qu'il est, beau et laid à la fois."},
+  {n:12,e:"Quel procédé le narrateur utilise-t-il pour impliquer le lecteur ?",type:"un",
+   o:["La comparaison : « comme un palais »","L'apostrophe au lecteur : « où vous la voyez coupée dans sa profondeur »","Le dialogue entre deux personnages"],r:[1],
+   c:"L'apostrophe au lecteur : « où vous la voyez coupée dans sa profondeur » — le narrateur omniscient guide le regard du lecteur comme un guide."},
+  {n:13,e:"« ce drame n'est ni une fiction ni un roman. All is true » : que revendique l'auteur ?",type:"un",
+   o:["La vérité, l'authenticité de son récit","Le caractère merveilleux de son histoire","Qu'il s'agit d'une pièce de théâtre"],r:[0],
+   c:"Il revendique la vérité, l'authenticité : le roman se présente comme documentaire, « chacun peut en reconnaître les éléments chez soi »."}
+ ]},
+ {titre:"Réfléchir et rédiger", qs:[
+  {n:14,e:"En quoi cette description annonce-t-elle le destin des personnages ?",type:"un",
+   o:["Le cadre sordide annonce des destins mesquins ou tragiques","Le cadre joyeux annonce une fin heureuse","La description n'annonce rien"],r:[0],
+   c:"Le cadre sordide annonce des destins mesquins ou tragiques : la misère, l'argent-roi, l'amour filial trahi ; le lieu est le « cadre de bronze » du drame."},
+  {n:15,e:"Rédigez un paragraphe argumenté montrant que ce texte est « le cadre de bronze » du drame qui va se jouer. Appuyez chaque argument sur une citation.",type:"libre",
+   c:"Réponse personnelle argumentée : chaque argument doit s'appuyer sur une citation du texte (laideur, détails chiffrés, symbole de l'Amour écaillé, oppositions sociales)."},
+  {n:16,e:"Selon vous, pourquoi Balzac commence-t-il son roman par la description du lieu plutôt que par l'action ?",type:"libre",
+   c:"Réponse personnelle : commencer par le lieu, c'est affirmer que l'homme est produit par son milieu, thèse centrale du réalisme balzacien."}
+ ]}
+];
+
+const zone=document.getElementById("questions");
+const notees=[];
+PARTIES.forEach(p=>{
+  const h=document.createElement("h2"); h.textContent="✏️ "+p.titre; zone.appendChild(h);
+  p.qs.forEach(q=>{
+    const d=document.createElement("div"); d.className="q"; d.id="q"+q.n;
+    let html=`<div class="enonce"><span class="num">${q.n}</span>${q.e}</div>`;
+    if(q.type==="plusieurs") html+=`<div class="consigne">Plusieurs réponses possibles — cochez toutes les bonnes réponses.</div>`;
+    if(q.type==="libre"){
+      html+=`<div class="consigne">Question personnelle (non notée automatiquement) — consultez le corrigé.</div><textarea placeholder="Écris ta réponse ici..."></textarea>`;
+    }else{
+      notees.push(q);
+      const t=q.type==="un"?"radio":"checkbox";
+      html+=`<div class="opts">`+q.o.map((o,i)=>`<label><input type="${t}" name="r${q.n}" value="${i}"><span>${o}</span></label>`).join("")+`</div><div class="retour"></div>`;
+    }
+    d.innerHTML=html; zone.appendChild(d);
+    if(q.type!=="libre") d.querySelectorAll("input").forEach(inp=>inp.addEventListener("change",()=>corriger(q)));
+  });
+});
+
+function corriger(q){
+  const d=document.getElementById("q"+q.n);
+  const labels=[...d.querySelectorAll("label")];
+  const choix=labels.map(l=>l.querySelector("input").checked);
+  labels.forEach((l,i)=>{
+    l.classList.remove("ok","ko");
+    if(choix[i]) l.classList.add(q.r.includes(i)?"ok":"ko");
+  });
+  const juste=labels.every((l,i)=>choix[i]===q.r.includes(i));
+  const rien=!choix.some(Boolean);
+  const ret=d.querySelector(".retour");
+  d.classList.remove("juste","faux");
+  if(rien){ret.textContent="";ret.className="retour";}
+  else if(juste){d.classList.add("juste");ret.textContent="✔ Bonne réponse !";ret.className="retour ok";}
+  else{
+    d.classList.add("faux");
+    const bonsCoches=choix.filter((c,i)=>c&&q.r.includes(i)).length;
+    const manque=q.type==="plusieurs"&&!choix.some((c,i)=>c&&!q.r.includes(i))&&bonsCoches<q.r.length;
+    ret.textContent=manque?"➜ C'est juste, mais il manque des réponses.":"✘ Réponse incorrecte, essaie encore.";
+    ret.className="retour ko";
+  }
+  majScore();
+}
+function majScore(){
+  const n=document.querySelectorAll(".q.juste").length;
+  document.getElementById("score").textContent=n+" / "+notees.length;
+  document.getElementById("barre").style.width=(n/notees.length*100)+"%";
+}
+function afficherCorrige(){
+  const c=document.getElementById("corrige");
+  if(!c.innerHTML){
+    let h=`<h2>✅ Corrigé avec explications</h2><p><i>Les réponses aux questions 15 et 16 sont indicatives : elles admettent plusieurs argumentations valides, à condition d'être appuyées sur des citations du texte.</i></p>`;
+    PARTIES.forEach(p=>p.qs.forEach(q=>{
+      let bonne="";
+      if(q.type!=="libre") bonne=`<br><span style="color:var(--vert);font-weight:700">Bonne(s) réponse(s) : ${q.r.map(i=>q.o[i]).join(" ; ")}</span>`;
+      h+=`<div class="item"><b>${q.n}.</b> ${q.c}${bonne}</div>`;
+    }));
+    c.innerHTML=h;
+  }
+  c.classList.toggle("visible");
+  if(c.classList.contains("visible")) c.scrollIntoView({behavior:"smooth"});
+}
+function recommencer(){
+  document.querySelectorAll("input").forEach(i=>i.checked=false);
+  document.querySelectorAll("textarea").forEach(t=>t.value="");
+  notees.forEach(corriger);
+}
+function telecharger(){
+  const rep={};
+  document.querySelectorAll("#questions .q").forEach(d=>{
+    const ta=d.querySelector("textarea");
+    rep[d.id]=ta?ta.value:[...d.querySelectorAll("input")].map(i=>i.checked);
+  });
+  const clone=document.documentElement.cloneNode(true);
+  clone.querySelector("#questions").innerHTML="";
+  const c=clone.querySelector("#corrige"); c.innerHTML=""; c.className="";
+  clone.querySelector("#reponses").textContent=JSON.stringify(rep);
+  const html="<!DOCTYPE html>\n"+clone.outerHTML;
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(new Blob([html],{type:"text/html;charset=utf-8"}));
+  a.download="Pere_Goriot_exercice_Sid_KHALIFA.html";
+  document.body.appendChild(a); a.click(); a.remove();
+}
+// Restaure les réponses enregistrées dans un fichier téléchargé
+try{
+  const rep=JSON.parse(document.getElementById("reponses").textContent||"{}");
+  Object.entries(rep).forEach(([id,v])=>{
+    const d=document.getElementById(id); if(!d) return;
+    if(typeof v==="string") d.querySelector("textarea").value=v;
+    else d.querySelectorAll("input").forEach((inp,i)=>inp.checked=!!v[i]);
+  });
+  notees.forEach(q=>{ if(document.querySelector(`#q${q.n} input:checked`)) corriger(q); });
+}catch(e){}
+</script>
+</body>
+</html>
